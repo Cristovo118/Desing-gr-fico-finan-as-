@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Design Gráfico</title>
+<style>
+  /* ... seu CSS permanece igual ... */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f8f5fa;
+    color: #3a015c;
+    line-height: 1.6;
+  }
+  header {
+    background: linear-gradient(90deg, #720026, #ce6cc9);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  header h1 {
+    font-size: 2.5rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.3rem;
+    border-bottom: 3px solid #ce6cc9;
+  }
+  nav {
+    margin-top: 1rem;
+  }
+  nav a {
+    color: #ffcbf2;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  nav a:hover {
+    color: #e75480;
+  }
+  section {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(114, 0, 38, 0.2);
+  }
+  h2 {
+    color: #720026;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ce6cc9;
+    padding-bottom: 0.3rem;
+  }
+  #sobre p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  #portfolio .item {
+    border: 1px solid #ce6cc9;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #fdf4ff;
+  }
+  #portfolio .item h3 {
+    margin-bottom: 0.5rem;
+  }
+  #blog .comentarios {
+    margin-top: 1rem;
+    border-top: 1px solid #ce6cc9;
+    padding-top: 1rem;
+  }
+  #blog .comentario {
+    border-bottom: 1px solid #e5a4da;
+    padding: 0.5rem 0;
+  }
+  #blog form {
+    margin-top: 1rem;
+  }
+  #blog input[type=text], #blog textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.7rem;
+    border-radius: 6px;
+    border: 1px solid #ce6cc9;
+    font-size: 1rem;
+  }
+  #blog button {
+    background: #ce6cc9;
+    border: none;
+    color: white;
+    padding: 0.6rem 1.3rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  #blog button:hover {
+    background: #a84c8e;
+  }
+  footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: #720026;
+    color: white;
+    margin-top: 3rem;
+  }
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 1.8rem;
+    }
+    nav a {
+      margin: 0 0.5rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Design Gráfico</h1>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#portfolio">Portfólio</a>
+    <a href="#blog">Blog</a>
+  </nav>
+</header>
+
+<section id="sobre" tabindex="0">
+  <h2>Sobre Design Gráfico</h2>
+  <p>Design gráfico é a arte e prática de planejar e projetar ideias e experiências com conteúdo visual e textual. Combinando criatividade e técnica, o design gráfico ajuda empresas e indivíduos a comunicar mensagens de forma clara, atraente e eficaz.</p>
+  <p>O design gráfico é essencial para criar materiais visuais, como relatórios, apresentações, infográficos e promoções que tornam informações complexas mais acessíveis e compreensíveis.</p>
+</section>
+
+<section id="portfolio" tabindex="0">
+  <h2>Portfólio</h2>
+  <div class="item">
+    <h3>Infográfico</h3>
+    <p>Criação de infográficos para ilustrar dados complexos de forma simples e visualmente atraente.</p>
+  </div>
+  <div class="item">
+    <h3>Branding para Empresa</h3>
+    <p>Desenvolvimento de identidade visual para empresas, com logo, paleta de cores e materiais de marketing.</p>
+  </div>
+  <div class="item">
+    <h3>Apresentação Corporativa</h3>
+    <p>Design de slides para apresentações, focando em clareza, impacto visual e profissionalismo.</p>
+  </div>
+</section>
+
+<section id="blog" tabindex="0">
+  <h2>Blog & Comentários</h2>
+  <article>
+    <h3>Como o Design Gráfico Impacta a Comunicação</h3>
+    <p>O design gráfico facilita a compreensão de informações através de gráficos, diagramas e layouts eficazes, ajudando a comunicar melhor as mensagens.</p>
+  </article>
+
+  <div class="comentarios" id="comentarios">
+    <h4>Comentários</h4>
+  </div>
+
+  <form id="comentario_form" aria-label="Formulário para enviar comentário">
+    <input type="text" id="nome_coment" placeholder="Seu nome" required />
+    <textarea id="texto_coment" rows="3" placeholder="Seu comentário" required></textarea>
+    <button type="submit">Enviar Comentário</button>
+  </form>
+</section>
+
+<footer>
+  &copy; 2025 Design Gráfico. Todos os direitos reservados.
+</footer>
+
+<script>
+  // Comentários usando localStorage
+  const formComent = document.getElementById('comentario_form');
+  const divComentarios = document.getElementById('comentarios');
+
+  function carregarComentarios() {
+    let comentarios = JSON.parse(localStorage.getItem('comentarios')) || [];
+    divComentarios.innerHTML = '<h4>Comentários</h4>';
+    comentarios.forEach(c => {
+      let div = document.createElement('div');
+      div.classList.add('comentario');
+      div.innerHTML = `<strong>${c.nome}:</strong> <p>${c.texto}</p>`;
+      divComentarios.appendChild(div);
+    });
+  }
+
+  formComent.addEventListener('submit', e => {
+    e.preventDefault();
+    const nome = document.getElementById('nome_coment').value.trim();
+    const texto = document.getElementById('texto_coment').value.trim();
+
+    if(nome && texto){
+      let comentarios = JSON.parse(localStorage.getItem('comentarios')) || [];
+      comentarios.push({nome, texto});
+      localStorage.setItem('comentarios', JSON.stringify(comentarios));
+      carregarComentarios();
+      formComent.reset();
+    }
+  });
+
+  carregarComentarios();
+
+  // Navegação suave
+  document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e){
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      target.scrollIntoView({behavior: 'smooth'});
+    });
+  });
+</script>
+
+</body>
+</html><section id="perguntas" tabindex="0">
+  <h2>Teste seus conhecimentos sobre Design Gráfico</h2>
+  <form id="quiz_form" aria-label="Quiz de perguntas sobre design gráfico e finanças">
+    <ol>
+      <li>
+        <label>1. O que é design gráfico?</label><br />
+        <input type="radio" name="q1" value="a" id="q1a" required /> <label for="q1a">a) Criação de códigos para sites</label><br />
+        <input type="radio" name="q1" value="b" id="q1b" /> <label for="q1b">b) Arte de criar imagens e layouts para comunicar ideias</label><br />
+        <input type="radio" name="q1" value="c" id="q1c" /> <label for="q1c">c) Escrita de textos técnicos</label>
+      </li>
+      <li>
+        <label>2. Para que serve o design gráfico nas finanças?</label><br />
+        <input type="radio" name="q2" value="a" id="q2a" required /> <label for="q2a">a) Para criar relatórios visuais que facilitam a compreensão dos dados</label><br />
+        <input type="radio" name="q2" value="b" id="q2b" /> <label for="q2b">b) Para calcular investimentos</label><br />
+        <input type="radio" name="q2" value="c" id="q2c" /> <label for="q2c">c) Para guardar dinheiro</label>
+      </li>
+      <li>
+        <label>3. Qual cor não foi usada no site?</label><br />
+        <input type="radio" name="q3" value="a" id="q3a" required /> <label for="q3a">a) Roxo</label><br />
+        <input type="radio" name="q3" value="b" id="q3b" /> <label for="q3b">b) Verde</label><br />
+        <input type="radio" name="q3" value="c" id="q3c" /> <label for="q3c">c) Rosa</label>
+      </li>
+      <li>
+        <label>4. O que são infográficos?</label><br />
+        <input type="radio" name="q4" value="a" id="q4a" required /> <label for="q4a">a) Gráficos e imagens que explicam dados visualmente</label><br />
+        <input type="radio" name="q4" value="b" id="q4b" /> <label for="q4b">b) Textos longos para relatórios</label><br />
+        <input type="radio" name="q4" value="c" id="q4c" /> <label for="q4c">c) Planilhas financeiras</label>
+      </li>
+      <li>
+        <label>5. Qual é o foco do design gráfico em apresentações corporativas?</label><br />
+        <input type="radio" name="q5" value="a" id="q5a" required /> <label for="q5a">a) Clareza, impacto visual e profissionalismo</label><br />
+        <input type="radio" name="q5" value="b" id="q5b" /> <label for="q5b">b) Uso de muitas cores e animações</label><br />
+        <input type="radio" name="q5" value="c" id="q5c" /> <label for="q5c">c) Apenas texto sem imagens</label>
+      </li>
+    </ol>
+    <button type="submit">Enviar Respostas</button>
+  </form>
+  <div id="quiz_result" style="margin-top:1rem; font-weight:bold;"></div>
+  <footer style="margin-top:2rem; font-style: italic; font-size: 0.9rem; color: #720026;">
+    Feito por Grupo de Finanças do 1º Ano D
+  </footer>
+</section>
+
+<script>
+  // Script para validar o quiz e mostrar resultado
+  const quizForm = document.getElementById('quiz_form');
+  const quizResult = document.getElementById('quiz_result');
+
+  quizForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const respostasCorretas = {
+      q1: 'b',
+      q2: 'a',
+      q3: 'b',
+      q4: 'a',
+      q5: 'a'
+    };
+
+    let pontos = 0;
+
+    for (let i = 1; i <= 5; i++) {
+      const resposta = quizForm['q' + i].value;
+      if (resposta === respostasCorretas['q' + i]) {
+        pontos++;
+      }
+    }
+
+    quizResult.textContent = `Você acertou ${pontos} de 5 perguntas.`;
+
+    if (pontos === 5) {
+      quizResult.textContent += " Parabéns! Você tem ótimo conhecimento sobre design gráfico e finanças.";
+    } else if (pontos >= 3) {
+      quizResult.textContent += " Bom trabalho! Continue estudando para melhorar ainda mais.";
+    } else {
+      quizResult.textContent += " Que tal revisar o conteúdo e tentar novamente?";
+    }
+  });
+</script><footer style="margin-top:2rem; font-style: italic; font-size: 0.9rem; color: #720026;">
+  Feito por 
+  <span style="background-color: #ffcbf2; color: black; padding: 0 6px; border-radius: 3px; font-size: 1.3rem; font-weight: bold;"> 
+  Grupo de Finanças
+  </span> 
+  do 1º Ano D
+</footer>
